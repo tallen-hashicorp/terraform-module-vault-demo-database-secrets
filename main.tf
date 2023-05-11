@@ -42,6 +42,7 @@ EOT
 }
 
 resource "vault_identity_group_policies" "policies" {
+  namespace = var.namespace_path
   policies = [
     vault_policy.postgres_policy.name
   ]
