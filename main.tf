@@ -30,7 +30,7 @@ resource "vault_database_secret_backend_role" "postgres_admin_role" {
 }
 
 resource "vault_policy" "postgres_policy" {
-  name      = "${var.db_name}_admin"
+  name      = "${var.db_name}_postgres_admin"
   namespace = var.namespace_path
 
   policy = <<EOT
