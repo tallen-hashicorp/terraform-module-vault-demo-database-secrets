@@ -40,3 +40,12 @@ path "${vault_mount.db.path}/*" {
 }
 EOT
 }
+
+resource "vault_identity_group_policies" "policies" {
+  policies = [
+    vault_policy.postgres_policy.name
+  ]
+
+  exclusive = false
+  group_id = var.group_id
+}
